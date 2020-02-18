@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="buscapostoPU"
+		transaction-type="RESOURCE_LOCAL">
+
+		<!-- provedor/implementacao do JPA -->
+		<!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+
+		<!-- entidade mapeada -->
+		<class>buscaposto.model.Usuario</class>
+		<class>buscaposto.model.Gerente</class>
+		<class>buscaposto.model.BuscaPosto</class>
+		<class>buscaposto.model.Endereco</class>
+
+
+		<properties>
+			<!-- dados da conexao -->
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" /> <!-- DB Driver -->
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost:5432/postoDB" /> <!-- BD Mane -->
+			<property name="javax.persistence.jdbc.user"
+				value="postgres" /> <!-- DB User -->
+			<property name="javax.persistence.jdbc.password"
+				value="postgres" /> <!-- DB Password -->
+			<property name="eclipselink.ddl-generation" value="none" />
+			<property name="hibernate.enable_lazy_load_no_trans"
+				value="true" />
+
+
+			<!-- propriedades do hibernate -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+
+			<!-- atualiza o banco, gera as tabelas se for preciso -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+	</persistence-unit>
+</persistence>
