@@ -1,0 +1,135 @@
+<mat-card class="example-card">
+  <mat-card-header>
+
+    <mat-card-title>
+      <h1>Cadastro Posto</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-container ">
+      <form [formGroup]="postoForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nome:" formControlName="nome" name="nomeposto" >
+          <!-- <mat-error *ngIf="postoForm.controls.nome.errors.required">Informe nome</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Telefone: " formControlName="telefone" name="telefone" >
+          <!-- <mat-error *ngIf="postoForm.controls.nome.errors.required">Informe seu telefone:</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="E-mail:" formControlName="email" name="email" >
+          <!-- <mat-error *ngIf="postoForm.controls.nome.errors.required">Informe Nome</mat-error> -->
+        </mat-form-field><br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Senha: " formControlName="senha" name="senha"  type="password">
+          <!-- <mat-error *ngIf="postoForm.controls.senha.errors.required">Informe a senha</mat-error> -->
+        </mat-form-field>
+
+        <fieldset>
+          <table>
+            <td>
+              <tr>
+                <h4>Estado</h4>
+                <mat-form-field>
+                  <mat-label>UF</mat-label>
+                  <mat-select [formControl]="estadoControl" >
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let estado of estados" [value]="estado">
+                      {{estado.nome}}
+                    </mat-option>
+                  </mat-select>
+                  <!-- <mat-error *ngIf="estadoControl.hasError('required')">Por Favor Selecione Estado</mat-error> -->
+                  <mat-hint>{{estadoControl.value?.nome}}</mat-hint>
+                </mat-form-field><br>
+              </tr>
+            </td>
+
+            <td>
+              <tr>
+                <h4>Cidade</h4>
+                <mat-form-field>
+                  <mat-select [formControl]="cidadeControl">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let cidade of cidades" [value]="cidade">
+                      {{cidade.nome}}
+                    </mat-option>
+                  </mat-select>
+                  <!-- <mat-error *ngIf="cidadeControl.hasError('required')">Por Favor Selecione Cidade</mat-error> -->
+                  <mat-hint>{{cidadeControl.value?.nome}}</mat-hint>
+                </mat-form-field>
+              </tr>
+            </td>
+
+
+            <div>
+              <td>
+                <tr>
+                  <div>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Bairro: " formControlName="bairro" name="bairro">
+                      <!-- <mat-error *ngIf="postoForm.controls.senha.errors.required">Informe Bairro</mat-error> -->
+                    </mat-form-field>
+                  </div>
+                </tr>
+              </td>
+            </div>
+            <td>
+                <tr>
+                  <div>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Rua: " formControlName="rua" name="rua">
+                      <!-- <mat-error *ngIf="postoForm.controls.senha.errors.required">Informe Rua</mat-error> -->
+                    </mat-form-field>
+                  </div>
+                </tr>
+              </td>
+
+              <td>
+                  <tr>
+                    <div>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Numero: " formControlName="numero" name="numero">
+                        <!-- <mat-error *ngIf="postoForm.controls.senha.errors.required">Informe Numero</mat-error> -->
+                      </mat-form-field>
+                    </div>
+                  </tr>
+                </td>
+          </table>
+        </fieldset>
+      </form>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="">
+    <button mat-raised-button color="primary" [routerLink]="['/']">Salvar</button>
+    <button mat-raised-button [routerLink]="['/']">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- <fieldset>
+    <mat-label>Endereço</mat-label><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Informe seu Endereco: " formControlName="endereco" name="endereco">
+      </mat-form-field><br>
+      <select id="IdSelect">
+         
+          <option value="">Selecione</option>
+          <option name="estado" value="SP">SP</option>
+          <option name="estado" value="MS">MS</option>
+          <option name="estado" value="MS">MT</option>
+          <option name="estado" value="MS">RS</option>
+          <option name="estado" value="MS">SC</option>
+          <option name="estado" value="MS">GO</option>
+          <option name="estado" value="MS">MG</option>
+          
+        </select><br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Informe sua Rua: " formControlName="rua" name="rua"
+              required>
+            <mat-error *ngIf="usuarioForm.controls.senha.errors.required">Informe sua</mat-error>
+          </mat-form-field><br>
+
+    </fieldset> -->

@@ -1,0 +1,41 @@
+
+
+
+/* .container{
+    position: fixed;
+    top: 40%;
+    left: 50%; 
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    width:30%;
+   } */
+    
+  /* img {
+    width: 32%;
+    height: 70%;
+    object-fit: fill;
+  }  */
+
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    /* text-align: center; */
+    text-align: left;
+  }
+  .signin-content {
+    padding: 60px 1rem;
+  }
+  .full-width-input {
+    width: 100%;
+  }
+  
+   /* Radio Button */
+   .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }

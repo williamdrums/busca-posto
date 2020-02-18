@@ -1,0 +1,43 @@
+<!-- <span><img src="/src/assets/img/logingas.png"> </span> -->
+
+<div class="signin-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Login</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Digite  seu E-mail:" formControlName="email" name="email" [(ngModel)]="usuario.email">
+          <!-- <mat-error *ngIf="loginForm.controls.email.errors.required">Informe E-mail</mat-error> -->
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Digite sua Senha: " formControlName="senha" type="password" name="senha"
+          [(ngModel)]="usuario.senha">
+          <mat-error *ngIf="senhaRequired">Informe a senha</mat-error>
+        </mat-form-field><br>
+
+       
+        <Label class="primary">Selecione:</Label><br>
+        <div>
+          <mat-radio-group aria-label="Selecione opção">
+            <mat-radio-button name="tipoUsuario" id="IdUsuario" value="1">Usuario </mat-radio-button><br><br>
+            <mat-radio-button name="tipoUsuario" id="IdGerente" value="2">Gerente </mat-radio-button><br><br>
+            <mat-radio-button name="tipoUsuario" id="IdAdm" value="3">Adm </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click) = "login()">Login</button>
+      <button mat-raised-button [routerLink]="['/cadastro-usuario']" routerLinkActive="active">Cadastrar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

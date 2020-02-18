@@ -1,0 +1,40 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Cadastro Gerente</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [formGroup]="gerenteForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Informe seu Nome:" formControlName="nome" name="nome" [(ngModel)]="gerente.nome">
+        <!-- <mat-error *ngIf="gerenteForm.controls.nome.errors.required">Informe nome</mat-error> -->
+      </mat-form-field><br>
+
+      
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Informe E-mail:" formControlName="email" name="email" [(ngModel)]="gerente.email">
+        <!-- <mat-error *ngIf="gerenteForm.controls.nome.errors.required">Informe nome</mat-error> -->
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Digite Senha: " formControlName="senha" name="senha" type="password" [(ngModel)]="gerente.senha" >
+        <!-- <mat-error *ngIf="gerenteForm.controls.senha.errors.required">Informe a senha</mat-error> -->
+      </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Informe telefone:" formControlName="telefone" name="telefone" [(ngModel)]="gerente.telefone">
+          <!-- <mat-error *ngIf="gerenteForm.controls.nome.errors.required">Informe seu telefone:</mat-error> -->
+        </mat-form-field><br>
+     
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [routerLink]="['/']" (click)="salvar()" type="button">Salvar</button>
+    <button mat-raised-button [routerLink]="['/']">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

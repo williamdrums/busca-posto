@@ -1,0 +1,32 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h1> Cadastro Usuario</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Informe seu Nome:" formControlName="nome" name="username" [(ngModel)]="usuario.nome">
+        <!-- <mat-error *ngIf="usuarioForm.controls.nome.errors.required">Informe Nome</mat-error> -->
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Informe seu Email:" formControlName="email" name="email" [(ngModel)]="usuario.email">
+        <!-- <mat-error *ngIf="usuarioForm.controls.email.errors.required">Informe E-mail</mat-error> -->
+      </mat-form-field><br>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Informe Senha: " formControlName="senha" name="senha" [(ngModel)]="usuario.senha">
+        <!-- <mat-error *ngIf="usuarioForm.controls.senha.errors.required">Informe a Senha</mat-error> -->
+      </mat-form-field><br>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="['/']" (click)="salvar()" color="primary" type="button">Salvar</button>
+    <button mat-raised-button [routerLink]="['/']">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
