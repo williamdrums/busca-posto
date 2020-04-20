@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, EventEmitter } from '@angular/core';
 import { Posto } from '../model/posto';
 import { } from '@angular/google-maps';
 
+
 import { MapsService } from './maps.service';
 import { Postos } from '../lista-posto/lista-posto.component';
 

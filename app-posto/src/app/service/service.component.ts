@@ -18,12 +18,12 @@ import { PostoService } from './posto.service';
 export class ServiceComponent implements OnInit {
 
 
-  //tipo <Posto> é uma interface com os dados que serao inseridos na table
+  // tipo <Posto> é uma interface com os dados que serao inseridos na table
   postos: Array<Postos>;
 
 
 
-  //declarando o servico no construtor e recebendo a instancia do framework
+  // declarando o servico no construtor e recebendo a instancia do framework
   constructor(private postoService: PostoService, private router: Router) {
     this.postoService.listPosto.subscribe((data) => {
       this.postos = data;
@@ -32,7 +32,7 @@ export class ServiceComponent implements OnInit {
     this.postoService.getListaPosto();
   }
 
-  //inicializa o componente
+  // inicializa o componente
   ngOnInit() {
 
 

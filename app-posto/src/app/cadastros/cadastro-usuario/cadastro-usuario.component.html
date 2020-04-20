@@ -6,7 +6,7 @@
   </mat-card-header>
   <mat-card-content>
 
-    <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="usuarioForm">
 
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Informe seu Nome:" formControlName="nome" name="username" [(ngModel)]="usuario.nome">

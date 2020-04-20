@@ -25,14 +25,14 @@ public class UsuarioBO {
 //		}
 //	}
 
-    public boolean salvar(Usuario usuario) {
-        try {
-        	return usuDAO.salvar(usuario);
-        } catch (Exception e) {
-            System.out.println(e);
-            return false;
-        }
-    }
+	public boolean salvar(Usuario usuario) {
+		try {
+			return usuDAO.salvar(usuario);
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
+		}
+	}
 
 	public List<Usuario> listar() {
 		return usuDAO.buscarTodos();
@@ -43,8 +43,8 @@ public class UsuarioBO {
 	}
 
 
-	public Usuario editar(Integer id) {	
-		return  usuDAO.buscarPorId(id);
+	public Usuario editar(Integer id) {
+		return usuDAO.buscarPorId(id);
 	}
 
 }

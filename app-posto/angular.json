@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/app-posto",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -21,10 +22,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-             
-
-             
-              
             ],
             "styles": [
               {
@@ -34,15 +31,18 @@
               "src/assets/mapa/style.css"
             ],
             "scripts": [
-             
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/mapa/maps.js"
-              
-             
             ]
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -142,5 +142,8 @@
       }
     }
   },
-  "defaultProject": "app-posto"
+  "defaultProject": "app-posto",
+  "cli": {
+    "analytics": "1f0b147b-5079-445f-9b89-eafe4bb38bde"
+  }
 }

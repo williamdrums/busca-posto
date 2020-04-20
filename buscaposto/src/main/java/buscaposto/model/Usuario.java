@@ -15,12 +15,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usuario")
 @NamedQueries({ @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
-//		@NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.id = :id"),
 		@NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.id = :idUsuario"),
 		@NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome"),
 		@NamedQuery(name = "Usuario.login", query = "SELECT u FROM Usuario u WHERE u.email = :email AND u.senha = :senha"),
 		@NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email") })
-//@NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
+
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -94,7 +93,6 @@ public class Usuario implements Serializable {
 
 	@Override
 	public boolean equals(Object object) {
-		// TODO: Warning - this method won't work in the case the id fields are not set
 		if (!(object instanceof Usuario)) {
 			return false;
 		}

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { element } from '@angular/core/src/render3/instructions';
+// import { element } from '@angular/core/src/render3/instructions';
+
+
 import { PostoService } from '../service/posto.service';
 import { Posto } from '../model/posto';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'posto-lista-posto',
@@ -18,9 +21,9 @@ import { Posto } from '../model/posto';
 })
 export class ListaPostoComponent implements OnInit {
 
-  dataSource :Array <Posto>;
+  dataSource: Array<Posto>;
 
-  //mostra a label na tabela
+  // mostra a label na tabela
   colunasExibidas = ['posto', 'etanol', 'gasolina', 'bandeira', 'posicao', 'localizacao'];
   elementoExpandido: Postos | null;
   postoslist: Array<Posto>;
@@ -28,7 +31,7 @@ export class ListaPostoComponent implements OnInit {
   constructor(private service: PostoService) {
     console.log('lista posto');
     service.getListaPosto();
-    this.service.listPosto.subscribe((data) => { 
+    this.service.listPosto.subscribe((data) => {
 
       this.postoslist = data;
       //  console.log(this.postoslist);

@@ -14,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table
-//@NamedQueries({ @NamedQuery(name = "BuscaPosto.findAll", query = "SELECT u FROM Usuario u"),
-//	@NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.id = :id") })
 @NamedQuery(name = "BuscaPosto.findAll", query = "SELECT b FROM BuscaPosto b ORDER BY b.id")
 public class BuscaPosto implements Serializable {
 	private static final long serialVersionUID = 1L;

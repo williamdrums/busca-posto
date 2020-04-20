@@ -14,7 +14,7 @@ export class CadastroUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
   // submetido: boolean = false;
-  loginInvalido: boolean = false;
+  loginInvalido =  false;
   usuario: Usuario;
 
 
@@ -23,7 +23,7 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   salvar() {
-    this.serviceUsuario.setUsuario(this.usuario)
+    this.serviceUsuario.setUsuario(this.usuario);
   }
 
 

@@ -24,8 +24,6 @@ public class UsuarioDAO {
 
 		meneger = emf.createEntityManager();
 	}
-	
-	
 
 //	public Usuario salvar(Usuario usuario) {
 //
@@ -58,7 +56,7 @@ public class UsuarioDAO {
 //	}
 //
 	public boolean salvar(Usuario usuario) {
-		boolean resp = false; 
+		boolean resp = false;
 		usuario.setSenha(md5(usuario.getSenha()));
 		try {
 			EntityTransaction tx = meneger.getTransaction();
@@ -66,23 +64,23 @@ public class UsuarioDAO {
 			meneger.merge(usuario);
 			tx.commit();
 			resp = true;
-			
-		}catch (Exception e) {
-			// TODO: handle exception
+
+		} catch (Exception e) {
+
 		}
 		return resp;
 
 	}
 
 	public Usuario buscarPorId(Integer id) {
-		
-		return  meneger.find(Usuario.class, id);
+
+		return meneger.find(Usuario.class, id);
 	}
 
 	public List<Usuario> buscarTodos() {
-		// Query consulta = meneger.createQuery("select u from usuario u");
+
 		Query consulta = meneger.createQuery("select u from Usuario u ORDER BY u.id");
-		
+
 		return consulta.getResultList();
 	}
 
@@ -98,8 +96,26 @@ public class UsuarioDAO {
 		}
 
 	}
-	
-//criptografa a senha pro banco
+
+//	public Usuario editar(int id) {
+//
+//		Usuario usuario = new Usuario();
+//		usuario.setId(id);
+//		Usuario usuarioUpdate = meneger.find(Usuario.class, id);
+//
+//		usuarioUpdate.setNome(usuario.getNome());
+//		usuarioUpdate.setEmail(usuario.getEmail());
+//		usuarioUpdate.setSenha(usuario.getSenha());
+//		EntityTransaction tx = meneger.getTransaction();
+//		tx.begin();
+//		meneger.merge(usuarioUpdate);
+//		tx.commit();
+//		//meneger.merge(usuarioUpdate);
+//
+//		return usuarioUpdate;
+//	}
+
+	// criptografa a senha pro banco
 	public String md5(String senha) {
 		String sen = "";
 		MessageDigest md = null;

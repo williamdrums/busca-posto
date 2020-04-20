@@ -4,7 +4,7 @@
     <td mat-cell *matCellDef="let elemento"> {{elemento[coluna]}} </td>
   </ng-container>
 
-   <!-- Expande conteudo da coluna- The detail row is made up of this one column that spans across all columns --> 
+   <!-- Expande conteudo da coluna--> 
    <ng-container matColumnDef="detalheExpandido">
     <td mat-cell *matCellDef="let elemento" [attr.colspan]="colunasExibidas.length">
       <div class="example-elemento-detalhe" [@detalheExpandido]="elemento == elementoExpandido ? 'expandido' : 'nao_expandido'">
@@ -32,49 +32,3 @@
   </tr> 
     <tr mat-row *matRowDef="let linha; columns: ['detalheExpandido']" class="example-detail-row"></tr>
   </table>
-
-   <!-- exemplo André --> 
-  <!-- <tr ngFor="let item of postoslist; let i = index;" [id]="'line' + i" class="example-element-row" 
-    [class.example-expanded-row]="elementoExpandido === elemento" (click)="elementoExpandido = elementoExpandido === elemento ? null : elemento">
-    <td>{{(i+1)}}</td>
-      <td>{{item.posto}}</td>
-      <td>{{item.etanol}}</td>
-      <td>{{item.gasolina}}</td>
-      <td>{{item.bandeira}}</td> 
-  </tr>  -->
-
-  <!-- <tr *ngFor="let item of postoslist; let i = index;" [id]="'line' + i" class="example-element-row" 
-  (click)="elementoExpandido = elementoExpandido === elemento ? null : elemento">
-      <td>{{(i+1)}}</td>
-      <td>{{item.posto}}</td>
-      <td>{{item.etanol}}</td>
-      <td>{{item.gasolina}}</td>
-      <td>{{item.bandeira}}</td> -->
-    <!-- </tr>  -->
-  <!-- <tr mat-row *matRowDef="let linha; columns: ['detalheExpandido']" class="example-detail-row"></tr>
-
-
-
-</table> 
-
-
-   <table id="tab1" class="table col-12">
-      <thead>
-      <tr>
-        <th >#</th>
-        <th >posto</th>
-        <th >etanol</th>
-        <th >gasolina</th>
-        <th >bandeira</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let item of postoslist; let i = index;" [id]="'line' + i">
-        <td class="center"> {{(i+1)}}</td>
-        <td class="center">{{item.posto}}</td>
-        <td class="center">{{item.etanol}}</td>
-        <td class="center">{{item.gasolina}}</td>
-        <td class="center">{{item.bandeira}}</td>
-      </tr>
-      </tbody>
-    </table> -->

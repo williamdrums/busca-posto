@@ -15,27 +15,20 @@ import buscaposto.model.Usuario;
 public class LoginResource {
 
 	LoginDAO loginDAO = new LoginDAO();
+
 	@POST
 	@Path("/usuario")
 	@Consumes("application/json")
 	@Produces("application/json")
 	public Response loginUsuario(Usuario usuario) {
 //		return Response.status(200).entity(usuarioBO.listar()).build();
-			System.out.println(usuario.getEmail());
-			System.out.println(usuario.getSenha());
+		System.out.println(usuario.getEmail());
+		System.out.println(usuario.getSenha());
 		Usuario usu = loginDAO.login(usuario);
-	
-		
-		return Response.status(200).entity(usu)
-				. header("Access-Control-Allow-Origin", "*")
+
+		return Response.status(200).entity(usu).header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-				.build();
-//		return Response.ok("").entity(usu).header("Access-Control-Allow-Origin", "*")
-//				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
-//				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-//				.header("Access-Control-Max-Age", "2000").build();
+				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD").build();
 	}
 
-	
 }

@@ -25,26 +25,24 @@ public class BuscaPostoResource {
 	@Produces("application/json")
 	public Response salvar(BuscaPosto buscaPosto) {
 		buscaPostoBO.salvar(buscaPosto);
-		//return Response.status(200).entity(buscaPosto).build();
-		
+		// return Response.status(200).entity(buscaPosto).build();
 
-		 return Response.ok("").header("Access-Control-Allow-Origin", "*")
-		.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
-		.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-		.header("Access-Control-Max-Age", "2000").build();
+		return Response.ok("").header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+				.header("Access-Control-Max-Age", "2000").build();
 	}
+
 	@GET
 	@Path("/listar")
 	@Produces("application/json")
 	public Response listar() {
 //		return Response.status(200).entity(buscaPostoBO.listar()).build();
-		
-		return Response.ok("").entity(buscaPostoBO.listar()).
-				 header("Access-Control-Allow-Origin", "*")
+
+		return Response.ok("").entity(buscaPostoBO.listar()).header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
 				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-				.header("Access-Control-Max-Age", "2000") 
-				.build();
+				.header("Access-Control-Max-Age", "2000").build();
 	}
 
 	@GET

@@ -19,13 +19,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
 import { ListaPostoComponent } from './lista-posto/lista-posto.component';
-import { MatTableModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ApiJsMapsComponent } from './api-js-maps/api-js-maps.component';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule} from 'agm-direction';
 import { ServiceComponent } from './service/service.component';
+import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.component';
 
 
 
@@ -41,7 +42,8 @@ import { ServiceComponent } from './service/service.component';
     HeaderComponent,
     ListaPostoComponent,
     ApiJsMapsComponent,
-    ServiceComponent
+    ServiceComponent,
+    UsuarioEditarComponent
 
 
   ],
