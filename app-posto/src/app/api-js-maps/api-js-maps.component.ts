@@ -14,15 +14,15 @@ import { Postos } from '../lista-posto/lista-posto.component';
 })
 export class ApiJsMapsComponent implements OnInit {
 
-  lat: Number
-  lng: Number
+  lat: Number;
+  lng: Number;
   zoom: Number = 14;
 
   latFinal: number;
   longFinal: number;
   listPosto: EventEmitter<any> = new EventEmitter<any>();
 
-  postolist: Array<Posto>
+  postolist: Array<Posto>;
 
   dir = undefined;
 
@@ -47,12 +47,12 @@ export class ApiJsMapsComponent implements OnInit {
         this.latFinal = parseFloat(this.postolist[i].latitude);
         this.longFinal = parseFloat(this.postolist[i].longitude);
         console.log(this.postolist);
-      
-      this.dir = {
-        origin: { lat: this.lat, lng: this.lng },
-        destination: { lat: this.latFinal, lng: this.longFinal }
+
+        this.dir = {
+          origin: { lat: this.lat, lng: this.lng },
+          destination: { lat: this.latFinal, lng: this.longFinal }
+        }
       }
-    }
 
 
     });

@@ -5,11 +5,11 @@ import { ListaRotas } from './app.route';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, ROUTES } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CustomMaterialModule } from "./material.module";
+import { CustomMaterialModule } from './material.module';
 import { AboutComponent } from './about/about.component';
 import { ContatoComponent } from './contato/contato.component';
 import { CadastroUsuarioComponent } from './cadastros/cadastro-usuario/cadastro-usuario.component';
@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule} from 'agm-direction';
 import { ServiceComponent } from './service/service.component';
-import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.component';
+
 
 
 
@@ -42,14 +42,14 @@ import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.componen
     HeaderComponent,
     ListaPostoComponent,
     ApiJsMapsComponent,
-    ServiceComponent,
-    UsuarioEditarComponent
+    ServiceComponent
+   
 
 
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ListaRotas),//lista de array com as rotas
+    RouterModule.forRoot(ListaRotas), // lista de array com as rotas
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -61,7 +61,7 @@ import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.componen
     CommonModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyBsMqJwPtyTYWwo2zrGdUnvnN1Piu9KPfg"//chave de acesso google maps
+      apiKey: 'AIzaSyBsMqJwPtyTYWwo2zrGdUnvnN1Piu9KPfg'// chave de acesso google maps
     }),
     AgmDirectionModule
   ],

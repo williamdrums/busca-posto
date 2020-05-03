@@ -13,14 +13,14 @@ export class LoginService {
     urlPosto: String = environment.apiUrl;
     listPosto: EventEmitter<any> = new EventEmitter<any>();
     login: EventEmitter<Boolean> = new EventEmitter<Boolean>();
-    
+
     // urlLogin: String = environment.apiUrl + '';
 
     constructor(private http: HttpClient, private routes: Router) { }
 
     public setLogin(usuario: Usuario) {
-        console.log(usuario.email)
-        console.log(usuario.senha)
+        console.log(usuario.email);
+        console.log(usuario.senha);
         // const obj = {
         //       nome: "Nascimento",
         //       email: "williandrums@gmail.com",
@@ -28,18 +28,13 @@ export class LoginService {
         //     };
         const body = JSON.stringify(usuario);
 
-        // const headers = new HttpHeaders().set('Content-Type', 'application/json');
-        // const options = {
-        //     headers: headers
-        // };
         this.http.post(this.urlPosto + 'login/usuario', body, {
             headers: new HttpHeaders().set('Content-Type', 'application/json')
         }).subscribe(data => {
             // @ts-ignore
-            if(data){
+            if (data) {
                 this.login.emit(true);
-            }
-            else{
+            } else {
                 this.login.emit(false);
             }
 

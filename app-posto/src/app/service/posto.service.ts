@@ -1,7 +1,7 @@
-import { environment } from "../../environments/environment.prod";
-import { Router } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
-import { Injectable, EventEmitter } from "@angular/core";
+import { environment } from '../../environments/environment.prod';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, EventEmitter } from '@angular/core';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Injectable, EventEmitter } from "@angular/core";
 export class PostoService {
     urlPosto: String = environment.apiUrl + 'buscaposto';
     listPosto: EventEmitter<any> = new EventEmitter<any>();
-    postosObject:any;
+    postosObject: any;
 
     constructor(private http: HttpClient, private routes: Router) { }
 
@@ -21,7 +21,7 @@ export class PostoService {
             this.listPosto.emit(data);
             this.postosObject = data;
 
-        })
+        });
     }
 
 }

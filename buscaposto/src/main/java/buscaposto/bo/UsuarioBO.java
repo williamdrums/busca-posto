@@ -14,20 +14,11 @@ public class UsuarioBO {
 	public UsuarioBO() {
 	}
 
-//	public void salvar(Usuario usuario) {
-//
-//
-//		try {
-//			usuDAO.salvar(usuario);
-//		} catch (Exception e) {
-//			System.out.println(e);
-//
-//		}
-//	}
-
 	public boolean salvar(Usuario usuario) {
 		try {
+
 			return usuDAO.salvar(usuario);
+
 		} catch (Exception e) {
 			System.out.println(e);
 			return false;
@@ -41,7 +32,6 @@ public class UsuarioBO {
 	public void remover(int id) {
 		usuDAO.excluir(usuDAO.buscarPorId(id));
 	}
-
 
 	public Usuario editar(Integer id) {
 		return usuDAO.buscarPorId(id);

@@ -49,14 +49,6 @@ public class UsuarioResource {
 	@Path("/editar/{id}")
 	public Response editar(@PathParam("id") int id) {
 
-//		usuario.setId(id);
-
-//
-//		Usuario usuarioUpdate = usuarioBO.editar(id);
-//		usuarioUpdate.setEmail(usuario.getEmail());
-//		usuarioUpdate.setNome(usuario.getNome());
-//		usuarioUpdate.setSenha(usuario.getSenha());
-//		usuarioBO.salvar(usuarioUpdate);
 		return Response.ok("").entity(usuarioBO.editar(id)).header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
 				.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
